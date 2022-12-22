@@ -1,5 +1,5 @@
 # React  Weather APP
-[LIVE Link](https://react-ts-weather-app-lyart.vercel.app/)
+* [LIVE Link 🚀](https://react-ts-weather-app-lyart.vercel.app/)
 
 ![Project Image](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gxqbs0ht53zebe4dzoma.png)
 
