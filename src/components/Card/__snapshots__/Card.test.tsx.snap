@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component snapshot test of Card component 1`] = `
+<div>
+  <div
+    class="MuiStack-root Card css-1sy57ly-MuiStack-root"
+  >
+    <span>
+      ICON
+    </span>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      Data
+       
+      Unit
+    </p>
+    <p
+      class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+    >
+      Label
+    </p>
+  </div>
+</div>
+`;
