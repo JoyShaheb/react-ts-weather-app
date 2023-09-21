@@ -1,31 +1,34 @@
-import React, { ChangeEvent, KeyboardEvent } from "react";
-import TextField from "@mui/material/TextField";
-import { useDispatch, useSelector } from "react-redux";
-import { setSearch } from "../../store";
-import { fetchWeather } from "../../store";
-import { iStore } from "../../types";
+import { ChangeEvent, FC, useState } from "react";
+import { TextField } from "@mui/material";
 
-const SearchBar = () => {
-  const dispatch = useDispatch();
-  const { search } = useSelector((state: iStore) => state.search) || "";
+interface iSearchBarProps {
+  value: string;
+  onChange: (e: string) => void;
+  name?: string;
+}
+
+const SearchBar: FC<iSearchBarProps> = ({ onChange, value, name }) => {
+  const [input, setInput] = useState<string>(value);
+
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onChange(input);
+  };
 
   return (
-    <TextField
-      id="outlined-basic"
-      type="search"
-      label="City Name"
-      variant="outlined"
-      fullWidth
-      placeholder="Search for a location"
-      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-        dispatch(setSearch(e.target.value))
-      }
-      onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
-        e.code === "Enter" &&
-        search !== "" &&
-        dispatch(fetchWeather(search) as any)
-      }
-    />
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="outlined-basic"
+        type="search"
+        name={name}
+        label="City Name"
+        variant="outlined"
+        fullWidth
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Search for a location"
+      />
+    </form>
   );
 };
 

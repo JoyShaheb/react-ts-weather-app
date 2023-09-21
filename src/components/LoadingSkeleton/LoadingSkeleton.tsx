@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Grid, Skeleton } from "@mui/material";
 
 interface iLoadingSkeleton {
@@ -6,7 +6,7 @@ interface iLoadingSkeleton {
 }
 
 const LoadingSkeleton: FC<iLoadingSkeleton> = ({ cards }) => {
-  const cardHeight = 125;
+  const cardHeight: number = 125;
   const animationType = "wave";
   return (
     <Grid container spacing={1}>

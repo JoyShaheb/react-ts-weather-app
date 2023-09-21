@@ -19,7 +19,7 @@
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5",
+    "react-redux": "^8.1.2",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -28,8 +28,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
+    "lint-staged": "lint-staged"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ]
+  },
+  "pre-commit": "lint-staged",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -50,7 +60,11 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
-    "jest": "^27.5.1"
+    "husky": "^8.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^14.0.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.0.3"
   },
   "jest": {
     "moduleNameMapper": {

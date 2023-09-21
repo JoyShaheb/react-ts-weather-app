@@ -6,16 +6,10 @@ import OpacityIcon from "@mui/icons-material/Opacity";
 import WaterIcon from "@mui/icons-material/Water";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import WbTwilightIcon from "@mui/icons-material/WbTwilight";
-import { iResult } from "../../types";
 import TimeZone from "../TimeZone/TimeZone";
+import { iWeatherData } from "../../types/interface";
 
-interface iDisplay {
-  data: iResult;
-}
-
-const Display: FC<iDisplay> = ({ data }) => {
-  const { main, wind, sys, timezone } = data?.result || {};
-
+const Display: FC<iWeatherData> = ({ main, wind, sys, timezone }) => {
   return (
     <Grid container spacing={1}>
       <Grid item xs={6}>
@@ -54,7 +48,6 @@ const Display: FC<iDisplay> = ({ data }) => {
         <Card
           icon={<WbSunnyIcon fontSize="medium" />}
           label="Sun Rise"
-          // @ts-ignore
           data={TimeZone({ input: sys?.sunrise, timezone })}
         />
       </Grid>
@@ -62,7 +55,6 @@ const Display: FC<iDisplay> = ({ data }) => {
         <Card
           icon={<WbTwilightIcon fontSize="medium" />}
           label="Sun Set"
-          // @ts-ignore
           data={TimeZone({ input: sys?.sunset, timezone })}
         />
       </Grid>

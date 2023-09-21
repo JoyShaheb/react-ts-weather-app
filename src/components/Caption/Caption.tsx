@@ -1,14 +1,11 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Typography } from "@mui/material";
-import { iResult } from "../../types";
+import { iWeatherData } from "../../types/interface";
 
-const Caption: FC<iResult> = ({ error, isLoading, result }) => {
-  const { name, sys } = result;
+const Caption: FC<iWeatherData> = ({ name, sys }) => {
   return (
     <Typography variant="h6" textAlign="center" my={1.5}>
-      {isLoading && "Loading..."}
-      {name && sys?.country && `${name}, ${sys?.country}`}
-      {error && "City not found"}
+      {name}, {sys?.country}
     </Typography>
   );
 };

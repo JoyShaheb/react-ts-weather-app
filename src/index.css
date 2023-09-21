@@ -1,4 +1,4 @@
-body{
+body {
   min-height: 100vh;
   display: grid;
   justify-content: center;
@@ -11,8 +11,4 @@ body{
   height: 600px;
   border-radius: 6px;
   padding: 20px;
-}
-
-.Card{
-  /* border: 2px solid gray; */
 }
