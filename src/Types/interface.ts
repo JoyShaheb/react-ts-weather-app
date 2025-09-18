@@ -22,8 +22,8 @@ export interface IMainWeatherData {
 }
 
 export interface ISys {
-  "type": 1,
-  "id": 9145,
+  "type": number,
+  "id": number,
   "country": string,
   "sunrise": number,
   "sunset": number
