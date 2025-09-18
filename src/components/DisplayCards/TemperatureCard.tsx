@@ -1,12 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
-import { LuSunrise, LuSunset } from "react-icons/lu";
+import { FaTemperatureLow } from "react-icons/fa";
+import { FaTemperatureArrowDown, FaTemperatureArrowUp } from "react-icons/fa6";
 
-export const TimeCard = ({
-  sunRise,
-  sunSet,
+export const TemperatureCard = ({
+  temp_max,
+  temp_mix,
 }: {
-  sunRise: string;
-  sunSet: string;
+  temp_max: number;
+  temp_mix: number;
 }) => {
   return (
     <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
@@ -15,12 +16,12 @@ export const TimeCard = ({
       </CardHeader>
       <CardContent className="flex items-center justify-center gap-6">
         <div className="flex flex-col items-center gap-1">
-          <LuSunrise className="w-16 h-16" />
-          <CardTitle>{sunRise}</CardTitle>
+          <FaTemperatureArrowDown className="w-16 h-16" />
+          <CardTitle>{temp_mix}</CardTitle>
         </div>
         <div className="flex flex-col items-center gap-1">
-          <LuSunset className="w-16 h-16" />
-          <CardTitle>{sunSet}</CardTitle>
+          <FaTemperatureArrowUp className="w-16 h-16" />
+          <CardTitle>{temp_max}</CardTitle>
         </div>
       </CardContent>
     </Card>

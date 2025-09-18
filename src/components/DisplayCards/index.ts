@@ -1,2 +1,5 @@
 export * from "./TimeCard"
 export * from "./CoordinatesCard"
+export * from "./LocalTimeCard.tsx"
+export * from "./WeatherCard.tsx"
+export * from "./TemperatureCard.tsx"
